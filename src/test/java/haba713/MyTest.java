@@ -1,27 +1,26 @@
-package haba713.service;
+package haba713;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import haba713.MyEntity;
-
 public class MyTest {
 
-    private static org.hibernate.cfg.Configuration hibernateConfig;
+    private static Configuration configuration;
     private static SessionFactory sessionFactory;
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
-        hibernateConfig = new org.hibernate.cfg.Configuration().configure();
-        sessionFactory = hibernateConfig.buildSessionFactory();
+        configuration = new Configuration().configure();
+        sessionFactory = configuration.buildSessionFactory();
     }
 
     @AfterClass
