@@ -16,9 +16,3 @@ dependencies {
     implementation 'org.hibernate.orm:hibernate-core:' + hibernateVersion
     testImplementation 'junit:junit:4.13.2'
 }
-
-test {
-    testLogging {
-        exceptionFormat = 'full'
-    }
-}

@@ -17,7 +17,7 @@ public class MyTest {
 
     private static org.hibernate.cfg.Configuration hibernateConfig;
     private static SessionFactory sessionFactory;
-    
+
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         hibernateConfig = new org.hibernate.cfg.Configuration().configure();
@@ -26,28 +26,28 @@ public class MyTest {
 
     @AfterClass
     public static void tearDownAfterClass() throws Exception {
-	sessionFactory.close();
+        sessionFactory.close();
     }
-    
+
     private Session session;
 
     @Before
     public void setUp() throws Exception {
-	session = sessionFactory.openSession(); 
+        session = sessionFactory.openSession();
     }
 
     @After
     public void tearDown() throws Exception {
-	session.close();
+        session.close();
     }
 
     @Test
     public void test() {
-	Transaction transaction = session.beginTransaction();
-	MyEntity entity = new MyEntity();
-	session.persist(entity);
-	assertNotNull(entity.getId());
-	transaction.commit();
+        Transaction transaction = session.beginTransaction();
+        MyEntity entity = new MyEntity();
+        session.persist(entity);
+        assertNotNull(entity.getId());
+        transaction.commit();
     }
 
 }
