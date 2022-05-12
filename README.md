@@ -35,6 +35,9 @@ docker-compose up -d
 ./gradlew test
 ```
 
+(Thanks for Christian at
+[Hibernate Zulip channel](https://hibernate.zulipchat.com) to sort this out.)
+
 ## IllegalStateException, UnsupportedOperationException
 ```
 java.lang.IllegalStateException: PostInitCallback queue could not be processed...
