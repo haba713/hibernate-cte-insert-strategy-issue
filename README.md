@@ -17,6 +17,24 @@ git checkout hibernate568
 ./gradlew test                                      # Works fine.
 ```
 
+## Resolved!
+
+The issue is resolved. Hibernate can't detect the correct PostgreSQL dialect
+version because of this configuration property: 
+
+```xml
+<property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+```
+
+Remove the line from [hibernate.cfg.xml](src/test/resources/hibernate.cfg.xml)
+and run tests again:
+
+```
+git checkout hibernate6_resolved
+docker-compose up -d
+./gradlew test
+```
+
 ## IllegalStateException, UnsupportedOperationException
 ```
 java.lang.IllegalStateException: PostInitCallback queue could not be processed...
