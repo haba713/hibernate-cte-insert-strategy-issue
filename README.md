@@ -35,8 +35,8 @@ docker-compose up -d
 ./gradlew test
 ```
 
-(Thanks for Christian at
-[Hibernate Zulip channel](https://hibernate.zulipchat.com) to sort this out.)
+(Thanks to Christian at
+[Hibernate Zulip channel](https://hibernate.zulipchat.com) for sorting this out.)
 
 ## IllegalStateException, UnsupportedOperationException
 ```
